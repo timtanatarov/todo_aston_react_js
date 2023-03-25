@@ -1,0 +1,18 @@
+.oneTodo{
+    margin-top: 10px;
+}
+
+.titleOneTodo{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subsOneTodo{
+    margin: 10px auto 0;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    position: relative;
+    box-shadow: 0px 0px 10px 4px #DDDDDD;
+}
