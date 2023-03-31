@@ -9,35 +9,53 @@ class App extends Component {
         super(props);
         this.state = {
             todos: [{
-                id: 1,
+                id: 0,
                 title: 'Помыть посуду',
                 subs: 'Не забыть сполоснуть, протереть и убрать на полку с чистой посудой.',
-                isEdited: false,
+                needToEdit: false,
             }, {
-                id: 2,
+                id: 1,
                 title: 'Запустить стирку',
                 subs: 'Не забыть включить отжим, повесить на сушилку и открыть окно.',
-                isEdited: false,
+                needToEdit: false,
             }],
         };
         this.deleteTodo = this.deleteTodo.bind(this);
         this.addTodo = this.addTodo.bind(this);
         this.editTodo = this.editTodo.bind(this);
+        this.saveTodo = this.saveTodo.bind(this);
     }
 
     addTodo = function (currentTitle) {
         const currentTodos = this.state.todos;
         this.setState({
             todos: [...currentTodos, {
-                id: currentTodos.length + 1, title: currentTitle, subs: 'Пустое описание', isEdited: false,
+                id: currentTodos.length, title: currentTitle, subs: 'Пустое описание', needToEdit: false,
             }]
         })
     }
 
     editTodo = function (currentId) {
         const currentTodos = this.state.todos;
+        currentTodos.map((value, index) => {
+            if (index === currentId){
+                value.needToEdit = true;
+            }
+        });
         this.setState({
-            todos: currentTodos.map(item => console.log(currentId))
+            todos: currentTodos,
+        })
+    }
+
+    saveTodo = function (currentId) {
+        const currentTodos = this.state.todos;
+        currentTodos.map((value, index) => {
+            if (index === currentId){
+                value.needToEdit = false;
+            }
+        });
+        this.setState({
+            todos: currentTodos,
         })
     }
 
@@ -53,7 +71,7 @@ class App extends Component {
     render() {
         return (<div className='App'>
             <div><CreateTodo addTodo={this.addTodo}/></div>
-            <div><TodoList todos={this.state.todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo}/></div>
+            <div><TodoList todos={this.state.todos} deleteTodo={this.deleteTodo} editTodo={this.editTodo} saveTodo={this.saveTodo}/></div>
         </div>)
     }
 }
