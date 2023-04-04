@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import {ActiveTodoList} from "./ActiveTodoList/ActiveTodoList";
-import {DoneTodoList} from "./DoneTodoList/DoneTodoList";
-import {ArchiveTodoList} from "./ArchiveTodoList/ArchiveTodoList";
+import {ActiveTodoList} from "../ActiveTodoList/ActiveTodoList";
+import {DoneTodoList} from "../DoneTodoList/DoneTodoList";
+import {ArchiveTodoList} from "../ArchiveTodoList/ArchiveTodoList";
 
 export class AllTodoList extends Component {
 

@@ -1,21 +1,16 @@
 import {Component} from "react";
 import {OneTodo} from "./OneTodo/OneTodo";
 
-export class ArchiveTodoList extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+export class DoneTodoList extends Component {
     render() {
-        const {todos, deleteTodo, editTodo, saveTodo, completeTodo, archiveTodo} = this.props;
+        const {todos, deleteTodo, completeTodo, archiveTodo} = this.props;
 
         const todoList = todos.map(item => {
-            if (!item.isCompleted && !item.isArchived){
+            if (item.isCompleted && !item.isArchived){
                 return (<div key={item.id.toString()}><OneTodo title={item.title} subs={item.subs} id={item.id}
-                                                               deleteTodo={deleteTodo} editTodo={editTodo}
-                                                               saveTodo={saveTodo} needToChange={item.needToEdit}
+                                                               deleteTodo={deleteTodo}
                                                                completeTodo={completeTodo} isComplete={item.isCompleted}
-                                                               archiveTodo={archiveTodo} isArchived={item.isArchived}
+                                                               archiveTodo={archiveTodo}
                 /></div>)
             }
         })

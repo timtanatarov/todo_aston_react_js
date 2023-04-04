@@ -20,6 +20,19 @@
     font-weight: bold;
 }
 
+.editedTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.editedSubs{
+    margin: 15px auto 1px;
+    width: 300px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
 .titleArchivedOneTodo{
     font-size: 20px;
     font-weight: bold;
