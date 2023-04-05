@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import s from './createTodo.module.css';
+import {ThemeContext} from "../../context/themeContext";
 
 export class CreateTodo extends Component {
     constructor(props) {
@@ -11,6 +11,8 @@ export class CreateTodo extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    static contextType = ThemeContext;
 
     handleChange(event) {
         this.setState({value: event.target.value});
@@ -25,18 +27,17 @@ export class CreateTodo extends Component {
         const addTodo = this.props.addTodo;
         const currentTitle = this.state.value;
         return (
-            <div className={s.containerCreateTodo}>
-                <div className={s.titleCreateTodo}>
+            <div>
+                <div>
                     My TODO
                 </div>
-                <div className={s.inputAndButtonBox}>
+                <div>
                     <form onSubmit={this.handleSubmit}>
                         <label>
                             <input type="text" value={this.state.value} onClick={(event) => event.target.select()}
-                                   onChange={this.handleChange} className={s.inputCreateTodo}/>
+                                   onChange={this.handleChange}/>
                         </label>
-                        <input type='submit' value='+' onClick={addTodo.bind(this, currentTitle)}
-                               className={s.buttonCreateTodo}/>
+                        <input type='submit'  value='+' onClick={addTodo.bind(this, currentTitle)}/>
                     </form>
                 </div>
             </div>

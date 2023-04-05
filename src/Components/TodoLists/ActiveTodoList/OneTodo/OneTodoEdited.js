@@ -1,5 +1,4 @@
 import {Component} from "react";
-import s from './OneTodo.module.css';
 
 export class OneTodoEdited extends Component {
     constructor(props) {
@@ -36,22 +35,22 @@ export class OneTodoEdited extends Component {
     render() {
         const {id, saveTodo,} = this.props;
         return (
-            <div className={s.oneTodoContainer}>
+            <div >
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <label>
                             <input type="text" value={this.state.editTitle} onClick={(event) => event.target.select()}
-                                   onChange={this.handleTitleChange} className={s.editedTitle}/>
+                                   onChange={this.handleTitleChange} />
                         </label>
                     </div>
                     <div>
                         <label>
                             <input type="text" value={this.state.editSubs} onClick={(event) => event.target.select()}
-                                   onChange={this.handleSubsChange} className={s.editedSubs}/>
+                                   onChange={this.handleSubsChange} />
                         </label>
                     </div>
                     <div>
-                        <button type='button' className={s.editButtonOneTodo} onClick={saveTodo.bind(this, id, this.state.editTitle, this.state.editSubs)}>
+                        <button type='button'  onClick={saveTodo.bind(this, id, this.state.editTitle, this.state.editSubs)}>
                             Сохранить
                         </button>
                     </div>

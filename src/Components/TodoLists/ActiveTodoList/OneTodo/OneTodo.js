@@ -1,5 +1,4 @@
 import {Component} from "react";
-import s from './OneTodo.module.css';
 import {OneTodoEdited} from "./OneTodoEdited";
 
 export class OneTodo extends Component {
@@ -19,22 +18,22 @@ export class OneTodo extends Component {
 
         if (!needToChange){
             return (
-                <div className={s.oneTodoContainer}>
-                    <div className={s.titleOneTodo}>
+                <div>
+                    <div>
                         <input type="checkbox" checked={isComplete} onChange={completeTodo.bind(this, id)}/>
                         {title}
                     </div>
-                    <div className={s.subsOneTodo}>
+                    <div>
                         {subs}
                     </div>
                     <div>
-                        <button type='button' className={s.editButtonOneTodo} onClick={editTodo.bind(this, id)}>
+                        <button type='button' onClick={editTodo.bind(this, id)}>
                             Изменить
                         </button>
-                        <button type='button' className={s.deleteButtonOneTodo} onClick={deleteTodo.bind(this, id)}>
+                        <button type='button' onClick={deleteTodo.bind(this, id)}>
                             Удалить
                         </button>
-                        <button type='button' className={s.archiveButtonOneTodo} onClick={archiveTodo.bind(this, id)}>
+                        <button type='button' onClick={archiveTodo.bind(this, id)}>
                             Архивировать
                         </button>
                     </div>

@@ -1,27 +1,26 @@
-import s from "../../../App.module.css";
 import {Link} from "react-router-dom";
 import React from "react";
 
 export const Links = (props) => {
     return (
-        <div className={s.selectCategories}>
-            <div className={s.linkContainer}>
-                <Link to="/active" className={s.link}>
+        <div>
+            <div>
+                <Link to="/active">
                     Активные
                 </Link>
             </div>
-            <div className={s.linkContainer}>
-                <Link to="/done" className={s.link}>
+            <div>
+                <Link to="/done">
                     Выполненные
                 </Link>
             </div>
-            <div className={s.linkContainer}>
-                <Link to="/archived" className={s.link}>
+            <div>
+                <Link to="/archived">
                     Архив
                 </Link>
             </div>
-            <div className={s.linkContainer}>
-                <Link to="/all" className={s.link}>
+            <div>
+                <Link to="/all">
                     Все
                 </Link>
             </div>

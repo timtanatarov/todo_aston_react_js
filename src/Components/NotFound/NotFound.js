@@ -1,18 +1,17 @@
 import {Link} from "react-router-dom";
 import React from "react";
-import s from "./NotFound.module.css";
 
 export const NotFound = () => {
     return (
         <div>
-            <div className={s.title}>
+            <div>
                 А такого у нас нет :(
             </div>
-            <div className={s.discription}>
+            <div>
                 Ошибка 404: страница не найдена.
             </div>
-            <div className={s.linkContainer}>
-                <Link to="/all" className={s.link}>
+            <div>
+                <Link to="/all">
                     Перейти ко всем задачам
                 </Link>
             </div>
