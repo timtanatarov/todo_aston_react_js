@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import {ThemeContext} from "../../context/themeContext";
+import s from './CreateTodo.module.css';
 
 export class CreateTodo extends Component {
     constructor(props) {
@@ -27,17 +28,14 @@ export class CreateTodo extends Component {
         const addTodo = this.props.addTodo;
         const currentTitle = this.state.value;
         return (
-            <div>
-                <div>
-                    My TODO
-                </div>
-                <div>
+            <div className={s.container}>
+                <div className={s.formContainer}>
                     <form onSubmit={this.handleSubmit}>
                         <label>
                             <input type="text" value={this.state.value} onClick={(event) => event.target.select()}
-                                   onChange={this.handleChange}/>
+                                   onChange={this.handleChange} className={s.form}/>
                         </label>
-                        <input type='submit'  value='+' onClick={addTodo.bind(this, currentTitle)}/>
+                        <input type='submit'  value='+' onClick={addTodo.bind(this, currentTitle)} className={s.button}/>
                     </form>
                 </div>
             </div>

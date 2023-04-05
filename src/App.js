@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import {CreateTodo} from "./Components/CreateTodo/CreateTodo";
-import {TodoRoutes} from "./Components/TodoLists/TodoLinks/TodoRoutes";
-import {Links} from "./Components/TodoLists/TodoLinks/Links";
+import {TodoRoutes} from "./Components/TodoLists/TodoLinks/TodoRoutes/TodoRoutes";
+import {Links} from "./Components/TodoLists/TodoLinks/Links/Links";
 import {ThemeContext} from "./context/themeContext";
-import {Wrapper} from "./ThemeToggler/Wrapper";
+import {ThemeToggler} from "./ThemeToggler/ThemeToggler";
 import s from './App.module.css';
 
 class App extends Component {
@@ -178,11 +178,15 @@ class App extends Component {
         return (
             <ThemeContext.Provider value={{value: this.state.theme, toggleTheme: this.toggleTheme}}>
                 <div className={s.App}>
-                    <Wrapper/>
-                    <div>
+                    <div className={s.Header}>
+                        <div className={s.ThemeToggler}>
+                            <ThemeToggler/>
+                        </div>
                         <div>
                             <CreateTodo addTodo={this.addTodo}/>
                         </div>
+                    </div>
+                    <div>
                         <div>
                             <Links/>
                         </div>

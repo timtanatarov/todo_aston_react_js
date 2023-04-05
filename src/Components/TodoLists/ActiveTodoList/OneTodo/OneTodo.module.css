@@ -1,0 +1,51 @@
+.container {
+    display: inline-block;
+    background-color: var(--todo-bg-color);
+    margin: 20px 25px 30px;
+    width: 400px;
+    height: 220px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.titleContainer {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    padding-bottom: 15px;
+}
+
+.checkbox{
+    margin-right: 10px;
+}
+
+.subs {
+    margin: 10px;
+    font-size: 15px;
+    padding-bottom: 5px;
+
+}
+
+.buttonsContainer {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.editButton, .deleteButton, .archiveButton {
+    background-color: rgba(94, 97, 255, 0.9);
+    color: white;
+    margin: 0 auto;
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+}
+
+.editButton:hover, .deleteButton:hover, .archiveButton:hover {
+    background-color: rgba(108, 111, 255, 0.9);
+    color: white;
+    margin: 0 auto;
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+}

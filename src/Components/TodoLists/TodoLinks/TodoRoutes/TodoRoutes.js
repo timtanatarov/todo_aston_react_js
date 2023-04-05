@@ -1,9 +1,9 @@
 import {Route, Routes} from "react-router-dom";
-import {AllTodoList} from "../AllTodoList/AllTodoList";
-import {ActiveTodoList} from "../ActiveTodoList/ActiveTodoList";
-import {DoneTodoList} from "../DoneTodoList/DoneTodoList";
-import {ArchiveTodoList} from "../ArchiveTodoList/ArchiveTodoList";
-import {NotFound} from "../../NotFound/NotFound";
+import {AllTodoList} from "../../AllTodoList/AllTodoList";
+import {ActiveTodoList} from "../../ActiveTodoList/ActiveTodoList";
+import {DoneTodoList} from "../../DoneTodoList/DoneTodoList";
+import {ArchiveTodoList} from "../../ArchiveTodoList/ArchiveTodoList";
+import {NotFound} from "../../../NotFound/NotFound";
 import React from "react";
 
 export const TodoRoutes = ({todos, deleteTodo, editTodo, completeTodo, saveTodo, archiveTodo}) => {

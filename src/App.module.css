@@ -3,3 +3,19 @@
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
 }
+
+.Header {
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    -webkit-box-shadow: var(--webkit-box-shadow);
+    -moz-box-shadow: var(--moz-box-shadow);
+    box-shadow: var(--box-shadow);
+}
+
+.ThemeToggler {
+    display: inline-block;
+    float: right;
+    margin-right: 30px;
+    margin-top: -10px;
+}

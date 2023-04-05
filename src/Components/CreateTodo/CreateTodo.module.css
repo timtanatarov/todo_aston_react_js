@@ -1,0 +1,39 @@
+.container {
+    background-color: mediumslateblue;
+    display: block;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(15, 15, 15, 0.2);
+    -moz-box-shadow: 0 4px 8px 0 rgba(15, 15, 15, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(15, 15, 15, 0.2);
+    height: 60px;
+
+}
+
+.formContainer {
+    margin: 20px;
+}
+
+.form {
+    height: 40px;
+    width: 400px;
+    color: var(--form-text-color);
+    background-color: var(--form-bg-color);
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+
+.button {
+    height: 40px;
+    width: 40px;
+    background-color: rgba(94, 97, 255, 0.9);
+    border-radius: 0 5px 5px 0;
+    color: white;
+}
+
+.button:hover {
+    height: 40px;
+    width: 40px;
+    background-color: rgba(108, 111, 255, 0.9);
+    border-radius: 0 5px 5px 0;
+}
