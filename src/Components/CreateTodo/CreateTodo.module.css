@@ -1,11 +1,11 @@
-.container {
-    display: block;
-    height: 60px;
-}
+/*.container {*/
+/*    display: block;*/
+/*    height: 60px;*/
+/*}*/
 
-.formContainer {
-    margin: 20px;
-}
+/*.formContainer {*/
+/*    margin: 20px;*/
+/*}*/
 
 .form {
     height: 40px;
@@ -24,11 +24,9 @@
     background-color: rgba(94, 97, 255, 0.9);
     border-radius: 0 5px 5px 0;
     color: white;
+    transition: background-color 0.1s linear;
 }
 
 .button:hover {
-    height: 40px;
-    width: 40px;
     background-color: rgba(108, 111, 255, 0.9);
-    border-radius: 0 5px 5px 0;
 }

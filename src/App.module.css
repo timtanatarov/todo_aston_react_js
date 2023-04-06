@@ -1,53 +1,83 @@
 .App {
-    position: relative;
-    text-align: center;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
 }
 
 .Header {
-    overflow: hidden;
     background-color: var(--todo-bg-color);
-    width: 100%;
-    height: 80px;
-    margin: 0 auto;
-    -webkit-box-shadow: var(--webkit-box-shadow);
-    -moz-box-shadow: var(--moz-box-shadow);
-    box-shadow: var(--box-shadow);
+}
+
+.container {
+    margin: 0 100px;
+}
+
+.HeaderLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .ThemeToggler {
-    height: 80px;
-    width: 80px;
-    position: fixed;
-    right: 100px;
-    margin-top: 100px;
+    display: flex;
+    align-items: self-end;
+    padding: 14px 0px;
+    margin-bottom: 18px;
 }
 
-.LinksContainer {
-    position: fixed;
-    text-align: left;
-    margin-left: 80px;
-    margin-top: 20px;
-    border-radius: 20px;
-    height: 310px;
-    width: 320px;
-    background-color: var(--todo-bg-color);
-}
-
-.Links:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
-.Links {
-    text-align: center;
+.ThemeSwitcher {
+    margin-right: 15px;
 }
 
 .CreateTodo {
+    margin: 0 auto;
+    padding-left: 100px;
 }
 
+.MainContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.Links {
+    margin-top: 22px;
+    position: fixed;
+    padding-top: 20px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    background-color: var(--todo-bg-color);
+    border-radius: 20px;
+    margin-left: -75vw;
+}
+
+.TodosContainer {
+    width: 60%;
+}
+
+.Links {
+}
+/*.LinksContainer {*/
+/*    position: fixed;*/
+/*    text-align: left;*/
+/*    margin-left: 1%;*/
+/*    margin-top: 20px;*/
+/*    border-radius: 20px;*/
+/*    height: 310px;*/
+/*    width: 320px;*/
+/*    background-color: var(--todo-bg-color);*/
+/*    !*background-color: #cc8180;*!*/
+/*}*/
+
+/*.Links:before {*/
+/*    content: '';*/
+/*    display: inline-block;*/
+/*    height: 100%;*/
+/*    vertical-align: middle;*/
+/*}*/
+
+/*.Links {*/
+/*    text-align: center;*/
+/*}*/
 
 

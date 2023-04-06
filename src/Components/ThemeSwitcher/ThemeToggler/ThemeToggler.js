@@ -1,10 +1,9 @@
 import React from 'react';
-import './Switch.css';
-import s from "../ThemeToggler.css";
+import './ThemeToggler.css';
 
-const Switch = ({ isOn, handleToggle }) => {
+const ThemeToggler = ({isOn, handleToggle}) => {
     return (
-        <div  className={s.toggler}>
+        <div>
             <input
                 checked={isOn}
                 onChange={handleToggle}
@@ -13,14 +12,14 @@ const Switch = ({ isOn, handleToggle }) => {
                 type="checkbox"
             />
             <label
-                style={{ background: isOn && 'rgba(81,90,255,0.9)' }}
+                style={{background: isOn && 'rgba(81,90,255,0.9)'}}
                 className="react-switch-label"
                 htmlFor={`react-switch-new`}
             >
-                <span className={`react-switch-button`} />
+                <span className={`react-switch-button`}/>
             </label>
         </div>
     );
 };
 
-export default Switch;
+export default ThemeToggler;

@@ -1,52 +1,46 @@
 .container {
     opacity: 50%;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /*background-color: #b3d4fc;*/
     background-color: var(--todo-bg-color);
-    margin: 20px 25px 30px;
-    width: 300px;
-    height: 180px;
-    padding: 30px;
-    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .titleContainer {
-    font-size: 20px;
+    width: 600px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 17px;
+    height: 17px;
+    border: 0.1mm solid black;
+}
+
+.title {
+    font-size: 23px;
     font-weight: bold;
-    margin: 10px;
-    padding-bottom: 15px;
 }
 
 .checkbox {
-    margin-right: 10px;
+    padding-right: 40px;
 }
 
-.subs {
+.subsContainer {
     margin: 10px;
     font-size: 15px;
     padding-bottom: 5px;
-
-}
-
-.buttonsContainer {
-    padding-top: 15px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .deleteButton, .archiveButton {
-    background-color: rgba(94, 97, 255, 0.9);
-    color: white;
-    margin: 0 auto;
-    height: 40px;
-    width: 80px;
-    border-radius: 10px;
-}
-
-.deleteButton:hover, .archiveButton:hover {
-    background-color: rgba(108, 111, 255, 0.9);
-    color: white;
-    margin: 0 auto;
-    height: 40px;
-    width: 80px;
-    border-radius: 10px;
+    outline: none; /* Для синий ободки */
+    border: 0;
+    background: transparent;
+    margin-right: 20px;
 }

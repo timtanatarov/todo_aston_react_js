@@ -1,51 +1,115 @@
 .container {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /*background-color: #b3d4fc;*/
     background-color: var(--todo-bg-color);
-    margin: 20px 25px 30px;
-    width: 300px;
-    height: 180px;
-    padding: 30px;
-    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.briefContainer {
+    width: 600px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.briefCheckBox {
+    padding-right: 40px;
+}
+.briefTitle {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.briefInput{
+    width: 17px;
+    height: 17px;
+    border: 0.1mm solid black;
+}
+
+.checkbox {
+    width: 600px;
+    margin-bottom: 20px;
 }
 
 .titleContainer {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px;
-    padding-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    padding-bottom: 20px;
 }
 
-.checkbox{
-    margin-right: 10px;
+.titleName {
+    width: 600px;
+    font-size: 20px;
+    font-weight: normal;
+    opacity: 50%;
+}
+
+.title {
+    padding-top: 5px;
+    font-size: 30px;
+    font-weight:  bold;
+    opacity: 100%;
+}
+
+.subsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    font-size: 20px;
+    padding-bottom: 40px;
+}
+
+.subsName {
+    width: 600px;
+    font-size: 20px;
+    font-weight: normal;
+    opacity: 50%;
 }
 
 .subs {
-    margin: 10px;
-    font-size: 15px;
-    padding-bottom: 5px;
-
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight:  normal;
+    opacity: 100%;
 }
 
 .buttonsContainer {
-    padding-top: 15px;
     display: flex;
     justify-content: space-between;
 }
 
 .editButton, .deleteButton, .archiveButton {
-    background-color: rgba(94, 97, 255, 0.9);
+    display: flex;
+    background-color: rgba(70, 73, 255, 0.9);
     color: white;
-    margin: 0 auto;
+    margin: 0 30px 0 auto;
     height: 40px;
-    width: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    /*width: 80px;*/
     border-radius: 10px;
+    transition:  background-color 0.3s linear;
+}
+
+.buttonIcon{
+    margin-right: 10px;
 }
 
 .editButton:hover, .deleteButton:hover, .archiveButton:hover {
     background-color: rgba(108, 111, 255, 0.9);
-    color: white;
-    margin: 0 auto;
-    height: 40px;
-    width: 80px;
-    border-radius: 10px;
+}
+
+
+.checkButton {
+    outline: none; /* Для синий ободки */
+    border: 0;
+    background: transparent;
+    margin-right: 20px;
 }

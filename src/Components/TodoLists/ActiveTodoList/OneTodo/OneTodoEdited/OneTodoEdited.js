@@ -1,4 +1,7 @@
 import {Component} from "react";
+import s from './OneTodoEdited.module.css';
+import { BsSaveFill } from "react-icons/bs";
+
 
 export class OneTodoEdited extends Component {
     constructor(props) {
@@ -35,28 +38,27 @@ export class OneTodoEdited extends Component {
     render() {
         const {id, saveTodo,} = this.props;
         return (
-            <div >
+            <div className={s.container}>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
+                    <div className={s.titleInputContainer}>
                         <label>
                             <input type="text" value={this.state.editTitle} onClick={(event) => event.target.select()}
-                                   onChange={this.handleTitleChange} />
+                                   onChange={this.handleTitleChange} className={s.titleInput}/>
                         </label>
                     </div>
-                    <div>
+                    <div className={s.subsInputContainer}>
                         <label>
                             <input type="text" value={this.state.editSubs} onClick={(event) => event.target.select()}
-                                   onChange={this.handleSubsChange} />
+                                   onChange={this.handleSubsChange} className={s.subsInput}/>
                         </label>
                     </div>
-                    <div>
-                        <button type='button'  onClick={saveTodo.bind(this, id, this.state.editTitle, this.state.editSubs)}>
-                            Сохранить
+                    <div className={s.saveButtonContainer}>
+                        <button type='button'
+                                onClick={saveTodo.bind(this, id, this.state.editTitle, this.state.editSubs)} className={s.saveButton}>
+                            <BsSaveFill/>
                         </button>
                     </div>
                 </form>
-                <div>
-                </div>
             </div>
         )
     }

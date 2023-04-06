@@ -1,6 +1,6 @@
 import {Component} from "react";
 import s from './OneTodo.module.css';
-import { BsFillTrash3Fill, BsArchive } from "react-icons/bs";
+import {BsFillTrash3Fill, BsArchive} from "react-icons/bs";
 
 export class OneTodo extends Component {
     render() {
@@ -17,20 +17,20 @@ export class OneTodo extends Component {
         return (
             <div className={s.container}>
                 <div className={s.titleContainer}>
-                    <input type="checkbox" checked={isComplete} onChange={completeTodo.bind(this, id)} className={s.checkbox}/>
-                    {title}
+                    <div className={s.checkbox}>
+                        <input type="checkbox" checked={isComplete} onChange={completeTodo.bind(this, id)}
+                               className={s.input}/>
+                    </div>
+                    <div className={s.title}>
+                        {title}
+                    </div>
                 </div>
-                <div className={s.subs}>
-                    {subs}
-                </div>
-                <div className={s.buttonsContainer}>
-                    <button type='button' onClick={archiveTodo.bind(this, id)} className={s.archiveButton}>
-                        <BsArchive />
-                    </button>
-                    <button type='button' onClick={deleteTodo.bind(this, id)} className={s.deleteButton}>
-                        <BsFillTrash3Fill />
-                    </button>
-                </div>
+                <button type='button' onClick={archiveTodo.bind(this, id)} className={s.archiveButton}>
+                    <BsArchive size='20px'/>
+                </button>
+                <button type='button' onClick={deleteTodo.bind(this, id)} className={s.deleteButton}>
+                    <BsFillTrash3Fill size='20px'/>
+                </button>
             </div>
         )
     }

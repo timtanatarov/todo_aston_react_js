@@ -3,9 +3,10 @@ import {CreateTodo} from "./Components/CreateTodo/CreateTodo";
 import {TodoRoutes} from "./Components/TodoLists/TodoLinks/TodoRoutes/TodoRoutes";
 import {Links} from "./Components/TodoLists/TodoLinks/Links/Links";
 import {ThemeContext} from "./context/themeContext";
-import {ThemeToggler} from "./ThemeToggler/ThemeToggler";
+import {ThemeSwitcher} from "./Components/ThemeSwitcher/ThemeSwitcher";
 import s from './App.module.css';
 import {nanoid} from 'nanoid';
+import {ThemeIcon} from "./Components/ThemeSwitcher/ThemeIcon/ThemeIcon";
 
 const ID_SIZE = 8;
 
@@ -76,6 +77,11 @@ class App extends Component {
 
     }
 
+    // setModalActive = function(currentId) {
+    //     const currentTodos = this.state.todos;
+    //
+    // }
+
     addTodo = function (currentTitle) {
         if (currentTitle.length < 2 || currentTitle === 'Добавить новую задачу') {
             alert('Введите заголовок');
@@ -90,7 +96,7 @@ class App extends Component {
                 needToEdit: false,
                 isCompleted: false,
                 isArchived: false,
-            }, ...currentTodos, ]
+            }, ...currentTodos,]
         })
         localStorage.setItem('todos', JSON.stringify(currentTodos));
     }
@@ -182,27 +188,36 @@ class App extends Component {
             <ThemeContext.Provider value={{value: this.state.theme, toggleTheme: this.toggleTheme}}>
                 <div className={s.App}>
                     <div className={s.Header}>
-                        <div className={s.ThemeToggler}>
-                            <ThemeToggler/>
-                        </div>
-                        <div className={s.CreateTodo}>
-                            <CreateTodo addTodo={this.addTodo}/>
-                        </div>
-                    </div>
-                    <div>
-                        <div className={s.LinksContainer}>
-                            <div className={s.Links}>
-                                <Links />
+                        <div className={s.container}>
+                            <div className={s.HeaderLine}>
+                                <div className={s.CreateTodo}>
+                                    <CreateTodo addTodo={this.addTodo}/>
+                                </div>
+                                <div className={s.ThemeToggler}>
+                                    <div className={s.ThemeSwitcher}>
+                                        <ThemeSwitcher/>
+                                    </div>
+                                    <div>
+                                        <ThemeIcon theme={this.state.theme}/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <TodoRoutes todos={this.state.todos}
-                                        deleteTodo={this.deleteTodo}
-                                        editTodo={this.editTodo}
-                                        saveTodo={this.saveTodo}
-                                        completeTodo={this.completeTodo}
-                                        archiveTodo={this.archiveTodo}
-                            />
+                    </div>
+                    <div className={s.MainContainer}>
+                            <div className={s.Links}>
+                                <Links/>
+                            </div>
+                        <div className={s.TodosContainer}>
+                            <div>
+                                <TodoRoutes todos={this.state.todos}
+                                            deleteTodo={this.deleteTodo}
+                                            editTodo={this.editTodo}
+                                            saveTodo={this.saveTodo}
+                                            completeTodo={this.completeTodo}
+                                            archiveTodo={this.archiveTodo}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

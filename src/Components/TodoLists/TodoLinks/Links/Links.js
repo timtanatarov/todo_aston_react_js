@@ -4,7 +4,7 @@ import s from './Links.module.css';
 
 export const Links = (props) => {
     return (
-        <div className={s.container}>
+        <div className={s.Links}>
             <div className={s.activeContainer} >
                 <Link to="/active" className={s.active}>
                     Активные
@@ -15,7 +15,7 @@ export const Links = (props) => {
                     Выполненные
                 </Link>
             </div>
-            <div className={s.archiveContainer}>
+                <div className={s.archiveContainer}>
                 <Link to="/archived" className={s.archive}>
                     Архив
                 </Link>
