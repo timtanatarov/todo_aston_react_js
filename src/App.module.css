@@ -1,12 +1,15 @@
 .App {
+    position: relative;
     text-align: center;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
 }
 
 .Header {
+    overflow: hidden;
+    background-color: var(--todo-bg-color);
     width: 100%;
-    height: 100px;
+    height: 80px;
     margin: 0 auto;
     -webkit-box-shadow: var(--webkit-box-shadow);
     -moz-box-shadow: var(--moz-box-shadow);
@@ -14,8 +17,37 @@
 }
 
 .ThemeToggler {
-    display: inline-block;
-    float: right;
-    margin-right: 30px;
-    margin-top: -10px;
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    right: 100px;
+    margin-top: 100px;
 }
+
+.LinksContainer {
+    position: fixed;
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 20px;
+    border-radius: 20px;
+    height: 310px;
+    width: 320px;
+    background-color: var(--todo-bg-color);
+}
+
+.Links:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.Links {
+    text-align: center;
+}
+
+.CreateTodo {
+}
+
+
+

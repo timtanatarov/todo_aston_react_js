@@ -5,6 +5,9 @@ import {Links} from "./Components/TodoLists/TodoLinks/Links/Links";
 import {ThemeContext} from "./context/themeContext";
 import {ThemeToggler} from "./ThemeToggler/ThemeToggler";
 import s from './App.module.css';
+import {nanoid} from 'nanoid';
+
+const ID_SIZE = 8;
 
 class App extends Component {
     constructor(props) {
@@ -13,54 +16,54 @@ class App extends Component {
             todos:
                 JSON.parse(localStorage.getItem('todos')) ||
                 [
-                    // {
-                    //     id: 0,
-                    //     title: 'Помыть посуду',
-                    //     subs: 'Не забыть сполоснуть, протереть и убрать на полку с чистой посудой.',
-                    //     needToEdit: false,
-                    //     isCompleted: false,
-                    //     isArchived: false,
-                    // },
-                    // {
-                    //     id: 1,
-                    //     title: 'Запустить стирку',
-                    //     subs: 'Не забыть включить отжим, повесить на сушилку и открыть окно.',
-                    //     needToEdit: false,
-                    //     isCompleted: false,
-                    //     isArchived: false,
-                    // },
-                    // {
-                    //     id: 2,
-                    //     title: 'Сходить на вечеринку',
-                    //     subs: 'Захватить с собой колонку и бонусную карту КБ.',
-                    //     needToEdit: false,
-                    //     isCompleted: true,
-                    //     isArchived: false,
-                    // },
-                    // {
-                    //     id: 3,
-                    //     title: 'Забрать куртку из химчистки',
-                    //     subs: 'Взять мелочь для чаевых и записать номер мастера, который чистил куртку.',
-                    //     needToEdit: false,
-                    //     isCompleted: true,
-                    //     isArchived: false,
-                    // },
-                    // {
-                    //     id: 4,
-                    //     title: 'Начать бегать по утрам',
-                    //     subs: 'Брать с собой воду и наушники.',
-                    //     needToEdit: false,
-                    //     isCompleted: false,
-                    //     isArchived: true,
-                    // },
-                    // {
-                    //     id: 5,
-                    //     title: 'Перестать есть фастфуд',
-                    //     subs: 'Заходить в жизньмарт и покупать там веган-салаты.',
-                    //     needToEdit: false,
-                    //     isCompleted: false,
-                    //     isArchived: true,
-                    // },
+                    {
+                        id: nanoid(ID_SIZE),
+                        title: 'Помыть посуду',
+                        subs: 'Не забыть сполоснуть, протереть и убрать на полку с чистой посудой.',
+                        needToEdit: false,
+                        isCompleted: false,
+                        isArchived: false,
+                    },
+                    {
+                        id: nanoid(ID_SIZE),
+                        title: 'Запустить стирку',
+                        subs: 'Не забыть включить отжим, повесить на сушилку и открыть окно.',
+                        needToEdit: false,
+                        isCompleted: false,
+                        isArchived: false,
+                    },
+                    {
+                        id: nanoid(ID_SIZE),
+                        title: 'Сходить на вечеринку',
+                        subs: 'Захватить с собой колонку и бонусную карту КБ.',
+                        needToEdit: false,
+                        isCompleted: false,
+                        isArchived: false,
+                    },
+                    {
+                        id: nanoid(ID_SIZE),
+                        title: 'Забрать куртку из химчистки',
+                        subs: 'Взять мелочь для чаевых и записать номер мастера, который чистил куртку.',
+                        needToEdit: false,
+                        isCompleted: false,
+                        isArchived: false,
+                    },
+                    {
+                        id: nanoid(ID_SIZE),
+                        title: 'Начать бегать по утрам',
+                        subs: 'Брать с собой воду и наушники.',
+                        needToEdit: false,
+                        isCompleted: false,
+                        isArchived: false,
+                    },
+                    {
+                        id: nanoid(ID_SIZE),
+                        title: 'Перестать есть фастфуд',
+                        subs: 'Заходить в жизньмарт и покупать там веган-салаты.',
+                        needToEdit: false,
+                        isCompleted: false,
+                        isArchived: false,
+                    },
                 ],
             theme: 'dark',
         };
@@ -74,28 +77,28 @@ class App extends Component {
     }
 
     addTodo = function (currentTitle) {
-        if (currentTitle.length < 2) {
-            alert('Введите заголовок длиннее');
+        if (currentTitle.length < 2 || currentTitle === 'Добавить новую задачу') {
+            alert('Введите заголовок');
             return;
         }
         const currentTodos = this.state.todos;
         this.setState({
-            todos: [...currentTodos, {
-                id: currentTodos.length,
+            todos: [{
+                id: nanoid(ID_SIZE),
                 title: currentTitle,
                 subs: 'Пустое описание',
                 needToEdit: false,
                 isCompleted: false,
                 isArchived: false,
-            }]
+            }, ...currentTodos, ]
         })
         localStorage.setItem('todos', JSON.stringify(currentTodos));
     }
 
     editTodo = function (currentId) {
         const currentTodos = this.state.todos;
-        currentTodos.map((value, index) => {
-            if (index === currentId) {
+        currentTodos.map(value => {
+            if (value.id === currentId) {
                 value.needToEdit = true;
                 value.isCompleted = false;
                 value.isArchived = false;
@@ -109,8 +112,8 @@ class App extends Component {
 
     saveTodo = function (currentId, currentTitle, currentSubs) {
         const currentTodos = this.state.todos;
-        currentTodos.map((value, index) => {
-            if (index === currentId) {
+        currentTodos.map(value => {
+            if (value.id === currentId) {
                 value.needToEdit = false;
                 value.title = currentTitle;
                 value.subs = currentSubs;
@@ -135,8 +138,8 @@ class App extends Component {
 
     completeTodo = function (currentId) {
         const currentTodos = this.state.todos;
-        currentTodos.map((value, index) => {
-            if (index === currentId) {
+        currentTodos.map(value => {
+            if (value.id === currentId) {
                 value.isCompleted = !value.isCompleted;
             }
         })
@@ -149,8 +152,8 @@ class App extends Component {
 
     archiveTodo = function (currentId) {
         const currentTodos = this.state.todos;
-        currentTodos.map((value, index) => {
-            if (index === currentId) {
+        currentTodos.map(value => {
+            if (value.id === currentId) {
                 value.isArchived = !value.isArchived;
             }
         });
@@ -182,13 +185,15 @@ class App extends Component {
                         <div className={s.ThemeToggler}>
                             <ThemeToggler/>
                         </div>
-                        <div>
+                        <div className={s.CreateTodo}>
                             <CreateTodo addTodo={this.addTodo}/>
                         </div>
                     </div>
                     <div>
-                        <div>
-                            <Links/>
+                        <div className={s.LinksContainer}>
+                            <div className={s.Links}>
+                                <Links />
+                            </div>
                         </div>
                         <div>
                             <TodoRoutes todos={this.state.todos}

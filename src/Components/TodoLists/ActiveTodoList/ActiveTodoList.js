@@ -9,7 +9,7 @@ export class ActiveTodoList extends Component {
         const todoList = todos.map(item => {
             if (!item.isCompleted && !item.isArchived) {
                 return (
-                    <div key={item.id.toString()}>
+                    <div key={item.title.toString()}>
                         <OneTodo title={item.title} subs={item.subs} id={item.id}
                                  deleteTodo={deleteTodo} editTodo={editTodo}
                                  saveTodo={saveTodo} needToChange={item.needToEdit}

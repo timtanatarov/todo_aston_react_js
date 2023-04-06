@@ -1,9 +1,10 @@
 import React from 'react';
 import './Switch.css';
+import s from "../ThemeToggler.css";
 
 const Switch = ({ isOn, handleToggle }) => {
     return (
-        <>
+        <div  className={s.toggler}>
             <input
                 checked={isOn}
                 onChange={handleToggle}
@@ -18,7 +19,7 @@ const Switch = ({ isOn, handleToggle }) => {
             >
                 <span className={`react-switch-button`} />
             </label>
-        </>
+        </div>
     );
 };
 

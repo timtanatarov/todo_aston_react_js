@@ -1,7 +1,8 @@
 import {ThemeContext} from "../context/themeContext";
 import {Component} from "react";
 import Switch from "./Switch/Switch";
-import { BsFillBrightnessHighFill, BsFillMoonFill } from "react-icons/bs";
+import {BsFillBrightnessHighFill, BsFillMoonFill} from "react-icons/bs";
+import s from './ThemeToggler.css';
 
 export class ThemeToggler extends Component {
     constructor(props) {
@@ -18,15 +19,18 @@ export class ThemeToggler extends Component {
     }
 
     render() {
-        const currentIcon = this.state.value ? <BsFillBrightnessHighFill /> : <BsFillMoonFill/>
+        const currentIcon = this.state.value ? <BsFillBrightnessHighFill className={s.icon}/> :
+          <BsFillMoonFill className={s.icon}/>
         return (
-            <div>
+            <div className={s.container}>
                 <div>
                     {currentIcon}
+                </div>
+                <div>
                     <Switch
                         isOn={this.state.value}
                         handleToggle={() => {
-                            this.setState({ value: !this.state.value })
+                            this.setState({value: !this.state.value})
                             this.handleClick()
                         }}
                     />
