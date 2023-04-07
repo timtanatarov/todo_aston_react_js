@@ -9,6 +9,8 @@ export class OneTodoEdited extends Component {
         this.state = {
             editTitle: this.props.title,
             editSubs: this.props.subs,
+            // editTitle: '',
+            // editSubs: '',
         }
 
         this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -49,8 +51,8 @@ export class OneTodoEdited extends Component {
                             Введите новый заголовок:
                         </div>
                         <label>
-                            <input type="text" value={this.state.editTitle} onClick={(event) => event.target.select()}
-                                   onChange={this.handleTitleChange} className={s.titleInput}/>
+                            <input type="text"  onClick={(event) => event.target.select()}
+                                   onChange={this.handleTitleChange} className={s.titleInput} placeholder={this.props.title}/>
                         </label>
                     </div>
                     <div className={s.subsInputContainer}>
@@ -58,8 +60,8 @@ export class OneTodoEdited extends Component {
                             Введите новое описание:
                         </div>
                         <label>
-                            <textarea type="text" value={this.state.editSubs} onClick={(event) => event.target.select()}
-                                   onChange={this.handleSubsChange} className={s.subsInput}/>
+                            <textarea type="text" onClick={(event) => event.target.select()}
+                                   onChange={this.handleSubsChange} className={s.subsInput} value={this.state.editSubs} placeholder={this.props.subs}/>
                         </label>
                     </div>
                     <div className={s.saveButtonContainer}>

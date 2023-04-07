@@ -24,6 +24,9 @@
     margin-bottom: 18px;
 }
 
+.LiveSearch {
+}
+
 .ThemeSwitcher {
     margin-right: 15px;
 }
@@ -52,7 +55,15 @@
 }
 
 .TodosContainer {
-    width: 60%;
+    /*flex-wrap: wrap;*/
+    /*!*width: 60%;*!*/
+    /*margin: 0 auto;*/
+}
+.line {
+    background-color: var(--todo-bg-color);
+    width: 100vw;
+    height: 1px;
+    margin-bottom: 20px;
 }
 
 .Links {

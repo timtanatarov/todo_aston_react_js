@@ -2,7 +2,7 @@ import {Component} from "react";
 import s from "./OneTodoArchived.module.css";
 import {BsFillTrash3Fill, BsFillCapslockFill} from "react-icons/bs";
 
-export class OneTodoArchved extends Component {
+export class OneTodoArchived extends Component {
     render() {
         const {
             title,

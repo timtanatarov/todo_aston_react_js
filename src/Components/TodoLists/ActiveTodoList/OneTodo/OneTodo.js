@@ -10,18 +10,18 @@ export class OneTodo extends Component {
         super(props);
         this.state = {
             modalActive: false,
-            currentSubs: this.props.subs,
+            currentSubs: false,
         }
         this.handleChangeSubsMore = this.handleChangeSubsMore.bind(this);
         this.handleChangeSubsLess = this.handleChangeSubsLess.bind(this);
     }
 
     handleChangeSubsMore() {
-        this.setState({currentSubs: this.props.subs});
+        this.setState({currentSubs: !this.state.currentSubs});
     }
 
     handleChangeSubsLess() {
-        this.setState({currentSubs: this.props.subs.slice(0, 120)});
+        this.setState({currentSubs: !this.state.currentSubs});
     }
 
     render() {
@@ -41,10 +41,10 @@ export class OneTodo extends Component {
 
         if (!needToChange) {
             let button = '';
-            if (this.state.currentSubs.length > 120) {
+            if (this.state.currentSubs) {
                 button = <button onClick={this.handleChangeSubsLess} className={s.showAndHideButton}>Скрыть описание</button>;
             }
-            if (this.state.currentSubs.length <= 120) {
+            if (!this.state.currentSubs) {
                 button = <button onClick={this.handleChangeSubsMore} className={s.showAndHideButton}>Раскрыть описание</button>;
             }
             return (
@@ -68,10 +68,12 @@ export class OneTodo extends Component {
                                     Описание:
                                 </div>
                                 <div className={s.subs}>
-                                    {this.state.currentSubs.length > 120 ? this.state.currentSubs.slice(0, 120) : this.state.currentSubs}
-                                    <div>
-                                        {button}
-                                    </div>
+                                    {this.props.subs.length > 120 ? <div>
+                                        {!this.state.currentSubs ? `${this.props.subs.slice(0, 120)}...` : this.props.subs}
+                                        <div>
+                                            {button}
+                                        </div>
+                                    </div> : this.props.subs}
                                 </div>
                             </div>
                             <div className={s.buttonsContainer}>

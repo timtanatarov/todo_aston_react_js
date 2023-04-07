@@ -4,10 +4,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     /*background-color: #b3d4fc;*/
+    width: 800px;
     background-color: var(--todo-bg-color);
     margin: 20px;
     padding: 10px;
-    width: 800px;
     border-radius: 12px;
 }
 
@@ -19,8 +19,6 @@
     align-items: center;
 }
 
-.uselessButton {
-}
 
 .input {
     width: 17px;
@@ -44,15 +42,15 @@
 
 }
 
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .deleteButton, .archiveButton {
     outline: none; /* Для синий ободки */
     border: 0;
     background: transparent;
     margin-right: 20px;
-}
-
-.buttonContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }

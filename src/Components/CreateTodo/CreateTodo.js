@@ -6,7 +6,7 @@ export class CreateTodo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 'Добавить новую задачу',
+            value: '',
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -21,7 +21,7 @@ export class CreateTodo extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.setState({value: 'Добавить новую задачу'});
+        this.setState({value: ''});
     }
 
     render() {
@@ -32,7 +32,7 @@ export class CreateTodo extends Component {
                 <div className={s.formContainer}>
                     <form onSubmit={this.handleSubmit}>
                         <label>
-                            <input type="text" value={this.state.value} onClick={(event) => event.target.select()}
+                            <input type="text" value={this.state.value}placeholder='Добавить новую задачу' onClick={(event) => event.target.select()}
                                    onChange={this.handleChange} className={s.form}/>
                         </label>
                         <input type='submit'  value='+' onClick={addTodo.bind(this, currentTitle)} className={s.button}/>

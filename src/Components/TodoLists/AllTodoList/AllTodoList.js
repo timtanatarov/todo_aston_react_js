@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import s from './AllTodoList.module.css';
 import {OneTodo} from "../ActiveTodoList/OneTodo/OneTodo";
-import {OneTodoArchved} from "../ArchiveTodoList/OneTodo/OneTodoArchved";
+import {OneTodoArchived} from "../ArchiveTodoList/OneTodo/OneTodoArchived";
 import {OneTodoDone} from "../DoneTodoList/OneTodo/OneTodoDone";
 
 export class AllTodoList extends Component {
@@ -21,11 +21,11 @@ export class AllTodoList extends Component {
                     </div>)
             }
             if (item.isArchived){
-                return (<div key={item.title.toString()}><OneTodoArchved title={item.title} subs={item.subs} id={item.id}
-                                                                  deleteTodo={deleteTodo}
-                                                                  archiveTodo={archiveTodo} isArchived={item.isArchived}
-                                                                  completeTodo={completeTodo}
-                                                                  isComplete={item.isComplete}
+                return (<div key={item.title.toString()}><OneTodoArchived title={item.title} subs={item.subs} id={item.id}
+                                                                          deleteTodo={deleteTodo}
+                                                                          archiveTodo={archiveTodo} isArchived={item.isArchived}
+                                                                          completeTodo={completeTodo}
+                                                                          isComplete={item.isComplete}
                 /></div>)
             }
             if (item.isCompleted && !item.isArchived){

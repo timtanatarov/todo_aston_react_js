@@ -1,34 +1,35 @@
-/*.container {*/
-/*    display: block;*/
-/*    height: 60px;*/
-/*}*/
+.container {
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+}
 
-/*.formContainer {*/
-/*    margin: 20px;*/
-/*}*/
-
-.form {
-    height: 40px;
-    width: 400px;
+.input {
+    background-color: var(--form-bg-color);
     color: var(--form-text-color);
-    background-color: var(--main-bg-color);
+    border-radius: 12px;
+    margin: 30px 0 20px 0 ;
+    height: 50px;
+    width: 600px;
     text-align: center;
-    font-size: 15px;
-    border-radius: 5px 0 0 5px;
-    border: none;
+    flex-wrap: wrap;
 }
 
-.button {
-    height: 40px;
-    width: 40px;
-    background-color: rgba(94, 97, 255, 0.9);
-    border-radius: 0 5px 5px 0;
-    color: white;
-    transition: background-color 0.1s linear;
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.button:hover {
-    background-color: rgba(108, 111, 255, 0.9);
+.todosContainer {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    align-content: space-between;
+    margin: 0 auto 15px;
 }
 
 :focus::-webkit-input-placeholder {

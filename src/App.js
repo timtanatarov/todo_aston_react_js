@@ -7,6 +7,7 @@ import {ThemeSwitcher} from "./Components/ThemeSwitcher/ThemeSwitcher";
 import s from './App.module.css';
 import {nanoid} from 'nanoid';
 import {ThemeIcon} from "./Components/ThemeSwitcher/ThemeIcon/ThemeIcon";
+import {LiveSearch} from "./Components/LiveSearch/LiveSearch";
 
 const ID_SIZE = 8;
 
@@ -213,6 +214,18 @@ class App extends Component {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className={s.LiveSearch}>
+                        <LiveSearch searchTodos={this.state.todos}
+                                    deleteTodo={this.deleteTodo}
+                                    editTodo={this.editTodo}
+                                    saveTodo={this.saveTodo}
+                                    completeTodo={this.completeTodo}
+                                    archiveTodo={this.archiveTodo}
+                                    cancelEditTodo={this.cancelEditTodo} />
+                    </div>
+                    <div className={s.line}>
+
                     </div>
                     <div className={s.MainContainer}>
                             <div className={s.Links}>
