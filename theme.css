@@ -1,0 +1,15 @@
+body[data-theme='light'] {
+    --main-bg-color: #f4f4f4;
+    --main-text-color: #1c1c1c;
+    --form-bg-color: #e7e7e7;
+    --form-text-color: #333333;
+    --todo-bg-color: #e7e7e7;
+}
+
+body[data-theme='dark'] {
+    --main-bg-color: #333333;
+    --main-text-color: #ffffff;
+    --form-bg-color: #3d3d3d;
+    --form-text-color: #ffffff;
+    --todo-bg-color: #3d3d3d;
+}
