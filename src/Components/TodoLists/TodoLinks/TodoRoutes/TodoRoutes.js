@@ -6,7 +6,7 @@ import {ArchiveTodoList} from "../../ArchiveTodoList/ArchiveTodoList";
 import {NotFound} from "../../../NotFound/NotFound";
 import React from "react";
 
-export const TodoRoutes = ({todos, deleteTodo, editTodo, completeTodo, saveTodo, archiveTodo}) => {
+export const TodoRoutes = ({todos, deleteTodo, editTodo, completeTodo, saveTodo, archiveTodo, cancelEditTodo}) => {
     return (
         <Routes>
             <Route path="/all" element={<AllTodoList todos={todos}
@@ -14,13 +14,14 @@ export const TodoRoutes = ({todos, deleteTodo, editTodo, completeTodo, saveTodo,
                                                      editTodo={editTodo}
                                                      saveTodo={saveTodo}
                                                      completeTodo={completeTodo}
-                                                     archiveTodo={archiveTodo}/>}/>
+                                                     archiveTodo={archiveTodo} cancelEditTodo={cancelEditTodo}/>}/>
             <Route path="/active" element={<ActiveTodoList todos={todos}
                                                            deleteTodo={deleteTodo}
                                                            editTodo={editTodo}
                                                            saveTodo={saveTodo}
                                                            completeTodo={completeTodo}
-                                                           archiveTodo={archiveTodo}/>}/>
+                                                           archiveTodo={archiveTodo}
+                                                           cancelEditTodo={cancelEditTodo}/>}/>
             <Route path="/done" element={<DoneTodoList todos={todos}
                                                        deleteTodo={deleteTodo}
                                                        editTodo={editTodo}

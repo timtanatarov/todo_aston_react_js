@@ -74,13 +74,9 @@ class App extends Component {
         this.saveTodo = this.saveTodo.bind(this);
         this.completeTodo = this.completeTodo.bind(this);
         this.archiveTodo = this.archiveTodo.bind(this);
+        this.cancelEditTodo = this.cancelEditTodo.bind(this);
 
     }
-
-    // setModalActive = function(currentId) {
-    //     const currentTodos = this.state.todos;
-    //
-    // }
 
     addTodo = function (currentTitle) {
         if (currentTitle.length < 2 || currentTitle === 'Добавить новую задачу') {
@@ -92,7 +88,7 @@ class App extends Component {
             todos: [{
                 id: nanoid(ID_SIZE),
                 title: currentTitle,
-                subs: 'Пустое описание',
+                subs: 'Чтобы добавить описание, нажмите кнопку "редактировать"',
                 needToEdit: false,
                 isCompleted: false,
                 isArchived: false,
@@ -123,6 +119,20 @@ class App extends Component {
                 value.needToEdit = false;
                 value.title = currentTitle;
                 value.subs = currentSubs;
+                value.isCompleted = false;
+            }
+        });
+        this.setState({
+            todos: currentTodos,
+        })
+        localStorage.setItem('todos', JSON.stringify(currentTodos));
+    }
+
+    cancelEditTodo = function (currentId) {
+        const currentTodos = this.state.todos;
+        currentTodos.map(value => {
+            if (value.id === currentId) {
+                value.needToEdit = false;
                 value.isCompleted = false;
             }
         });
@@ -216,6 +226,7 @@ class App extends Component {
                                             saveTodo={this.saveTodo}
                                             completeTodo={this.completeTodo}
                                             archiveTodo={this.archiveTodo}
+                                            cancelEditTodo={this.cancelEditTodo}
                                 />
                             </div>
                         </div>

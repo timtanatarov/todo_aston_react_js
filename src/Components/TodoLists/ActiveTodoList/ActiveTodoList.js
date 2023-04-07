@@ -1,6 +1,7 @@
 import {Component} from "react";
-import {OneTodo} from "./OneTodo/OneTodo";
+
 import s from './ActiveTodoList.module.css';
+import {OneTodo} from "./OneTodo/OneTodo";
 
 export class ActiveTodoList extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ export class ActiveTodoList extends Component {
     }
 
     render() {
-        const {todos, deleteTodo, editTodo, saveTodo, completeTodo, archiveTodo} = this.props;
+        const {todos, deleteTodo, editTodo, saveTodo, completeTodo, archiveTodo, cancelEditTodo} = this.props;
         const todoList = todos.map(item => {
             if (!item.isCompleted && !item.isArchived) {
                 return (
@@ -17,7 +18,7 @@ export class ActiveTodoList extends Component {
                                  deleteTodo={deleteTodo} editTodo={editTodo}
                                  saveTodo={saveTodo} needToChange={item.needToEdit}
                                  completeTodo={completeTodo} isComplete={item.isCompleted}
-                                 archiveTodo={archiveTodo} isArchived={item.isArchived}
+                                 archiveTodo={archiveTodo} isArchived={item.isArchived} cancelEditTodo={cancelEditTodo}
                         />
                     </div>)
             }

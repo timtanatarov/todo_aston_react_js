@@ -9,7 +9,6 @@ export class Modal extends Component {
                 setActive({modalActive: false})
             }}>
                 <div className={active ? 'modal__content active' : "modal__content"} onClick={e => e.stopPropagation()}>
-
                     {children}
                 </div>
             </div>

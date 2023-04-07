@@ -1,49 +1,89 @@
 .container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: left;
     background-color: var(--todo-bg-color);
-    margin: 20px 25px 30px;
-    width: 300px;
-    height: 180px;
-    padding: 30px;
-    border-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .titleInputContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    padding-bottom: 20px;
+}
+
+.titleInputText {
+    width: 600px;
     font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-weight: normal;
+    opacity: 50%;
 }
 
 .titleInput {
     background-color: var(--main-bg-color);
     color: var(--form-text-color);
-    width: 290px;
-    border-radius: 10px;
-    padding: 10px;
+    padding: 15px 10px 15px 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-size: 25px;
+    width: 500px;
+    font-weight:  bold;
+    opacity: 100%;
 }
 .subsInputContainer {
-    font-size: 15px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    font-size: 20px;
+    padding-bottom: 40px;
+}
+
+.subsInputText {
+    width: 600px;
+    font-size: 20px;
+    font-weight: normal;
+    opacity: 50%;
 }
 
 .subsInput {
+    margin-top: 10px;
+    resize: none;
+    font-family: Arial, sans-serif;
     background-color: var(--main-bg-color);
     color: var(--form-text-color);
-    width: 290px;
+    width: 500px;
+    height: 200px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px 10px 15px 20px;
+}
+
+.saveButtonContainer {
+    display: flex;
+    justify-content: left;
 }
 
 .saveButton {
-    margin: 0 auto;
-    background-color: rgba(94, 97, 255, 0.9);
+    display: flex;
+    background-color: rgba(116, 155, 255, 0.9);
     color: white;
-    margin: 0 auto;
+margin-right: 30px;
     height: 40px;
-    width: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
-    transition: background-color 0.1s linear;
+    transition:  background-color 0.3s linear;
+}
+
+.saveButtonText {
+    margin-left: 10px;
+    font-size: 15px;
 }
 
 .saveButton:hover {

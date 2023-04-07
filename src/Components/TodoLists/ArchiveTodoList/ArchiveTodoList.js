@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {OneTodo} from "./OneTodo/OneTodo";
+import {OneTodoArchved} from "./OneTodo/OneTodoArchved";
 import s from './ArchiveTodoList.module.css';
 
 export class ArchiveTodoList extends Component {
@@ -12,11 +12,11 @@ export class ArchiveTodoList extends Component {
 
         const todoList = todos.map(item => {
             if (item.isArchived){
-                return (<div key={item.title.toString()}><OneTodo title={item.title} subs={item.subs} id={item.id}
-                                                               deleteTodo={deleteTodo}
-                                                               archiveTodo={archiveTodo} isArchived={item.isArchived}
-                                                               completeTodo={completeTodo}
-                                                               isComplete={item.isComplete}
+                return (<div key={item.title.toString()}><OneTodoArchved title={item.title} subs={item.subs} id={item.id}
+                                                                         deleteTodo={deleteTodo}
+                                                                         archiveTodo={archiveTodo} isArchived={item.isArchived}
+                                                                         completeTodo={completeTodo}
+                                                                         isComplete={item.isComplete}
                 /></div>)
             }
         })

@@ -1,7 +1,8 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: space-between;
+    align-items: center;
     /*background-color: #b3d4fc;*/
     background-color: var(--todo-bg-color);
     margin: 20px;
@@ -23,7 +24,7 @@
     font-weight: bold;
 }
 
-.briefInput{
+.briefInput, .inputButton{
     width: 17px;
     height: 17px;
     border: 0.1mm solid black;
@@ -82,9 +83,31 @@
     justify-content: space-between;
 }
 
-.editButton, .deleteButton, .archiveButton {
+.showAndHideButton {
+
+    background-color: rgba(116, 155, 255, 0.9);
+    color: white;
+    margin: 0 30px 0 auto;
+    margin-top: 10px;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    /*width: 80px;*/
+    border-radius: 10px;
+    transition:  background-color 0.3s linear;
+}
+
+.showAndHideButton:hover {
+    background-color: rgba(136, 138, 255, 0.9);
+}
+
+
+.editButton, .deleteButton, .archiveButton{
     display: flex;
-    background-color: rgba(70, 73, 255, 0.9);
+    background-color: rgba(116, 155, 255, 0.9);
     color: white;
     margin: 0 30px 0 auto;
     height: 40px;
@@ -98,12 +121,13 @@
     transition:  background-color 0.3s linear;
 }
 
-.buttonIcon{
-    margin-right: 10px;
+.buttonText{
+    margin-left: 10px;
+    font-size: 15px;
 }
 
 .editButton:hover, .deleteButton:hover, .archiveButton:hover {
-    background-color: rgba(108, 111, 255, 0.9);
+    background-color: rgba(136, 138, 255, 0.9);
 }
 
 

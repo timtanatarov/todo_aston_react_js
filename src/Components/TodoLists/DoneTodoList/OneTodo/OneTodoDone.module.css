@@ -2,8 +2,9 @@
     opacity: 50%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: space-between;
     /*background-color: #b3d4fc;*/
+    width: 800px;
     background-color: var(--todo-bg-color);
     margin: 20px;
     padding: 10px;
@@ -36,6 +37,12 @@
     margin: 10px;
     font-size: 15px;
     padding-bottom: 5px;
+}
+
+.buttonsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .deleteButton, .archiveButton {

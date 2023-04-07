@@ -1,16 +1,31 @@
-.active, .done, .archive, .all {
+.Links {
+    position: fixed;
+}
+
+
+.activeContainer .active, .doneContainer .done, .archiveContainer .archive, .allContainer .all {
+    display: block;
     text-decoration: none;
     font-size: 15px;
     color: white;
+    padding-top: 25px;
+    text-align: center;
+    /*padding: 30px;*/
+    height: 80%; /* Высота на весь слой */
+    width: 100%; /* Высота на весь слой */
+    outline: none;
 }
 
 .activeContainer, .doneContainer, .archiveContainer, .allContainer {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(94, 97, 255, 0.9);
-    padding: 15px;
+    /*padding: 15px;*/
     margin: 20px auto 0;
     border-radius: 15px;
-    width: 200px;
+    width: 200px; /* Ширина слоя */
+    height: 50px;
     transition: background-color 0.1s linear;
 }
 
