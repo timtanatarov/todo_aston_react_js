@@ -1,9 +1,11 @@
 .container {
+    width: 800px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: left;
     background-color: var(--todo-bg-color);
+    /*background-color: #b3d4fc;*/
     margin: 20px;
     padding: 10px;
     border-radius: 12px;
@@ -17,7 +19,7 @@
 }
 
 .titleInputText {
-    width: 600px;
+    width: 800px;
     font-size: 20px;
     font-weight: normal;
     opacity: 50%;
@@ -30,7 +32,7 @@
     border-radius: 12px;
     margin-top: 10px;
     font-size: 25px;
-    width: 500px;
+    width: 600px;
     font-weight:  bold;
     opacity: 100%;
 }
@@ -55,7 +57,7 @@
     font-family: Arial, sans-serif;
     background-color: var(--main-bg-color);
     color: var(--form-text-color);
-    width: 500px;
+    width: 600px;
     height: 200px;
     border-radius: 10px;
     padding: 15px 10px 15px 20px;

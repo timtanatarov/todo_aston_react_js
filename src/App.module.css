@@ -42,16 +42,16 @@
 }
 
 .Links {
-    margin-top: 22px;
+    margin-top: 20px;
     position: fixed;
     padding-top: 20px;
-    width: 300px;
+    width: 200px;
     display: flex;
     justify-content: center;
     height: 300px;
     background-color: var(--todo-bg-color);
     border-radius: 20px;
-    margin-left: -75vw;
+    margin-left: -80vw;
 }
 
 .TodosContainer {

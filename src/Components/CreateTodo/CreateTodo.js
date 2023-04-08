@@ -5,9 +5,7 @@ import s from './CreateTodo.module.css';
 export class CreateTodo extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            value: '',
-        }
+        this.state = {value: '',}
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,14 +26,14 @@ export class CreateTodo extends Component {
         const addTodo = this.props.addTodo;
         const currentTitle = this.state.value;
         return (
-            <div className={s.container}>
-                <div className={s.formContainer}>
+            <div>
+                <div>
                     <form onSubmit={this.handleSubmit}>
                         <label>
-                            <input type="text" value={this.state.value}placeholder='Добавить новую задачу' onClick={(event) => event.target.select()}
+                            <input type="text" value={this.state.value} placeholder='Добавить новую задачу'
                                    onChange={this.handleChange} className={s.form}/>
                         </label>
-                        <input type='submit'  value='+' onClick={addTodo.bind(this, currentTitle)} className={s.button}/>
+                        <input type='submit' value='+' onClick={addTodo.bind(this, currentTitle)} className={s.button}/>
                     </form>
                 </div>
             </div>

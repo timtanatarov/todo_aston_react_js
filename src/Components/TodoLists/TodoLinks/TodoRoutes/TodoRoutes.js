@@ -9,7 +9,7 @@ import React from "react";
 export const TodoRoutes = ({todos, deleteTodo, editTodo, completeTodo, saveTodo, archiveTodo, cancelEditTodo}) => {
     return (
         <Routes>
-            <Route path="/all" element={<AllTodoList todos={todos}
+            <Route path="/" element={<AllTodoList todos={todos}
                                                      deleteTodo={deleteTodo}
                                                      editTodo={editTodo}
                                                      saveTodo={saveTodo}

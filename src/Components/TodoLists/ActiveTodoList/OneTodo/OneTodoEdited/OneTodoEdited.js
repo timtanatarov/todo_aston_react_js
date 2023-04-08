@@ -1,6 +1,6 @@
 import {Component} from "react";
 import s from './OneTodoEdited.module.css';
-import { BsSaveFill, BsDashSquareDotted } from "react-icons/bs";
+import {BsSaveFill, BsDashSquareDotted} from "react-icons/bs";
 
 
 export class OneTodoEdited extends Component {
@@ -16,6 +16,8 @@ export class OneTodoEdited extends Component {
         this.handleTitleChange = this.handleTitleChange.bind(this);
         this.handleSubsChange = this.handleSubsChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUseSubs = this.handleUseSubs.bind(this);
+        this.handleUseTitle = this.handleUseTitle.bind(this);
     }
 
     handleTitleChange(event) {
@@ -27,7 +29,7 @@ export class OneTodoEdited extends Component {
 
     handleSubsChange(event) {
         if (event.target.value.length > 1000) {
-            alert ('Превышено количество вводимых символов');
+            alert('Превышено количество вводимых символов');
             return;
         }
         this.setState({
@@ -41,8 +43,16 @@ export class OneTodoEdited extends Component {
         this.setState({})
     }
 
+    handleUseSubs(event) {
+        event.target.value = this.state.editSubs;
+    }
+
+    handleUseTitle(event) {
+        event.target.value = this.state.editTitle;
+    }
+
     render() {
-        const {id, saveTodo, cancelEditTodo, } = this.props;
+        const {id, saveTodo, cancelEditTodo,} = this.props;
         return (
             <div className={s.container}>
                 <form onSubmit={this.handleSubmit}>
@@ -51,8 +61,10 @@ export class OneTodoEdited extends Component {
                             Введите новый заголовок:
                         </div>
                         <label>
-                            <input type="text"  onClick={(event) => event.target.select()}
-                                   onChange={this.handleTitleChange} className={s.titleInput} placeholder={this.props.title}/>
+                            <input type="text"
+                                   onClick={this.handleUseTitle}
+                                   onChange={this.handleTitleChange} className={s.titleInput}
+                                   placeholder={this.props.title}/>
                         </label>
                     </div>
                     <div className={s.subsInputContainer}>
@@ -60,13 +72,16 @@ export class OneTodoEdited extends Component {
                             Введите новое описание:
                         </div>
                         <label>
-                            <textarea type="text" onClick={(event) => event.target.select()}
-                                   onChange={this.handleSubsChange} className={s.subsInput} value={this.state.editSubs} placeholder={this.props.subs}/>
+                            <textarea
+                                      onClick={this.handleUseSubs}
+                                      onChange={this.handleSubsChange} className={s.subsInput}
+                                      placeholder={this.props.subs}/>
                         </label>
                     </div>
                     <div className={s.saveButtonContainer}>
                         <button type='button'
-                                onClick={saveTodo.bind(this, id, this.state.editTitle, this.state.editSubs)} className={s.saveButton}>
+                                onClick={saveTodo.bind(this, id, this.state.editTitle, this.state.editSubs)}
+                                className={s.saveButton}>
                             <BsSaveFill/>
                             <div className={s.saveButtonText}>
                                 Сохранить

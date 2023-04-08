@@ -21,7 +21,7 @@ export const Links = (props) => {
                 </Link>
             </div>
             <div className={s.allContainer}>
-                <Link to="/all" className={s.all}>
+                <Link to="/" className={s.all}>
                     Все
                 </Link>
             </div>

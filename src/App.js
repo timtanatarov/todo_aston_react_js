@@ -15,60 +15,10 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todos:
-                JSON.parse(localStorage.getItem('todos')) ||
-                [
-                    {
-                        id: nanoid(ID_SIZE),
-                        title: 'Помыть посуду',
-                        subs: 'Не забыть сполоснуть, протереть и убрать на полку с чистой посудой.',
-                        needToEdit: false,
-                        isCompleted: false,
-                        isArchived: false,
-                    },
-                    {
-                        id: nanoid(ID_SIZE),
-                        title: 'Запустить стирку',
-                        subs: 'Не забыть включить отжим, повесить на сушилку и открыть окно.',
-                        needToEdit: false,
-                        isCompleted: false,
-                        isArchived: false,
-                    },
-                    {
-                        id: nanoid(ID_SIZE),
-                        title: 'Сходить на вечеринку',
-                        subs: 'Захватить с собой колонку и бонусную карту КБ.',
-                        needToEdit: false,
-                        isCompleted: false,
-                        isArchived: false,
-                    },
-                    {
-                        id: nanoid(ID_SIZE),
-                        title: 'Забрать куртку из химчистки',
-                        subs: 'Взять мелочь для чаевых и записать номер мастера, который чистил куртку.',
-                        needToEdit: false,
-                        isCompleted: false,
-                        isArchived: false,
-                    },
-                    {
-                        id: nanoid(ID_SIZE),
-                        title: 'Начать бегать по утрам',
-                        subs: 'Брать с собой воду и наушники.',
-                        needToEdit: false,
-                        isCompleted: false,
-                        isArchived: false,
-                    },
-                    {
-                        id: nanoid(ID_SIZE),
-                        title: 'Перестать есть фастфуд',
-                        subs: 'Заходить в жизньмарт и покупать там веган-салаты.',
-                        needToEdit: false,
-                        isCompleted: false,
-                        isArchived: false,
-                    },
-                ],
+            todos: JSON.parse(localStorage.getItem('todos')) || [],
             theme: 'dark',
         };
+
         this.deleteTodo = this.deleteTodo.bind(this);
         this.addTodo = this.addTodo.bind(this);
         this.editTodo = this.editTodo.bind(this);
@@ -76,7 +26,6 @@ class App extends Component {
         this.completeTodo = this.completeTodo.bind(this);
         this.archiveTodo = this.archiveTodo.bind(this);
         this.cancelEditTodo = this.cancelEditTodo.bind(this);
-
     }
 
     addTodo = function (currentTitle) {
@@ -196,56 +145,58 @@ class App extends Component {
 
     render() {
         return (
-            <ThemeContext.Provider value={{value: this.state.theme, toggleTheme: this.toggleTheme}}>
-                <div className={s.App}>
-                    <div className={s.Header}>
-                        <div className={s.container}>
-                            <div className={s.HeaderLine}>
-                                <div className={s.CreateTodo}>
-                                    <CreateTodo addTodo={this.addTodo}/>
-                                </div>
-                                <div className={s.ThemeToggler}>
-                                    <div className={s.ThemeSwitcher}>
-                                        <ThemeSwitcher/>
+            <div>
+                <ThemeContext.Provider value={{value: this.state.theme, toggleTheme: this.toggleTheme}}>
+                    <div className={s.App}>
+                        <div className={s.Header}>
+                            <div className={s.container}>
+                                <div className={s.HeaderLine}>
+                                    <div className={s.CreateTodo}>
+                                        <CreateTodo addTodo={this.addTodo}/>
                                     </div>
-                                    <div>
-                                        <ThemeIcon theme={this.state.theme}/>
+                                    <div className={s.ThemeToggler}>
+                                        <div className={s.ThemeSwitcher}>
+                                            <ThemeSwitcher/>
+                                        </div>
+                                        <div>
+                                            <ThemeIcon theme={this.state.theme}/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={s.LiveSearch}>
-                        <LiveSearch searchTodos={this.state.todos}
-                                    deleteTodo={this.deleteTodo}
-                                    editTodo={this.editTodo}
-                                    saveTodo={this.saveTodo}
-                                    completeTodo={this.completeTodo}
-                                    archiveTodo={this.archiveTodo}
-                                    cancelEditTodo={this.cancelEditTodo} />
-                    </div>
-                    <div className={s.line}>
+                        <div className={s.LiveSearch}>
+                            <LiveSearch searchTodos={this.state.todos}
+                                        deleteTodo={this.deleteTodo}
+                                        editTodo={this.editTodo}
+                                        saveTodo={this.saveTodo}
+                                        completeTodo={this.completeTodo}
+                                        archiveTodo={this.archiveTodo}
+                                        cancelEditTodo={this.cancelEditTodo}/>
+                        </div>
+                        <div className={s.line}>
 
-                    </div>
-                    <div className={s.MainContainer}>
+                        </div>
+                        <div className={s.MainContainer}>
                             <div className={s.Links}>
                                 <Links/>
                             </div>
-                        <div className={s.TodosContainer}>
-                            <div>
-                                <TodoRoutes todos={this.state.todos}
-                                            deleteTodo={this.deleteTodo}
-                                            editTodo={this.editTodo}
-                                            saveTodo={this.saveTodo}
-                                            completeTodo={this.completeTodo}
-                                            archiveTodo={this.archiveTodo}
-                                            cancelEditTodo={this.cancelEditTodo}
-                                />
+                            <div className={s.TodosContainer}>
+                                <div>
+                                    <TodoRoutes todos={this.state.todos}
+                                                deleteTodo={this.deleteTodo}
+                                                editTodo={this.editTodo}
+                                                saveTodo={this.saveTodo}
+                                                completeTodo={this.completeTodo}
+                                                archiveTodo={this.archiveTodo}
+                                                cancelEditTodo={this.cancelEditTodo}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </ThemeContext.Provider>
+                </ThemeContext.Provider>
+            </div>
         )
     }
 }
